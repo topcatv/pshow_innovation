@@ -3286,7 +3286,6 @@
 </XPD:OBJ>
 <XPD:OBJ name="Attributes[8]" type="UMLAttribute" guid="6Jawn5d3RZ4AGAAAuAAAACuq">
 <XPD:ATTR name="Name" type="string">versionHistory</XPD:ATTR>
-<XPD:ATTR name="Visibility" type="UMLVisibilityKind">vkPrivate</XPD:ATTR>
 <XPD:ATTR name="TypeExpression" type="string">PVersionHistory</XPD:ATTR>
 <XPD:REF name="Type_">RmgnAKW59fMAANBpegUOAAAA</XPD:REF>
 <XPD:REF name="Owner">ZKY6ZY+3HHoAANBpegUOAAAA</XPD:REF>
