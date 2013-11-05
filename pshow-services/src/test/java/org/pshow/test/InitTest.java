@@ -2,11 +2,17 @@ package org.pshow.test;
 
 import static org.junit.Assert.*;
 
-import org.junit.Test;
-import org.pshow.service.dao.UserDao;
-import org.pshow.service.dao.entity.AccountInfo;
-import org.springframework.beans.factory.annotation.Autowired;
+import java.util.List;
 
+import org.junit.Test;
+import org.pshow.dao.UserDao;
+import org.pshow.dao.entity.AccountInfo;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.test.context.transaction.TransactionConfiguration;
+import org.springframework.transaction.annotation.Transactional;
+
+@TransactionConfiguration(transactionManager = "transactionManager", defaultRollback = true)  
+@Transactional
 public class InitTest extends PshowBaseTest {
 	
 	@Autowired
@@ -17,6 +23,8 @@ public class InitTest extends PshowBaseTest {
 		AccountInfo accountInfo = new AccountInfo();
 		accountInfo.setBalance(0);
 		userDao.save(accountInfo);
-		assertTrue(true);
+		List<AccountInfo> list = userDao.findByBalance(0);
+		assertNotNull(list);
+		assertEquals(1, list.size());
 	}
 }
